@@ -14,7 +14,7 @@ int main()
     int guess = 0;
     int counter = 0;
     char ans = ' ';
-    int randomNum = rand() % 101; //generate random number between 1 and 100
+    int randomNum = rand() % 101; //generate random number between 0 and 100
     cout << "Guess the random number between 1 and 100: " << endl; // print out a line
     while (guess != randomNum){ //while user does not guess number, try again until correct
       cin >> guess; // allow user input
