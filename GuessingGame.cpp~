@@ -1,0 +1,41 @@
+#include <iostream>
+#include <stdlib.h> // srand, rand
+#include <time.h> // NULL
+#include <stdio.h> // time
+using namespace std;
+
+/* 9/13/19 Author: Maggie Bao. Description: The computer will pick a random number between  */
+int main()
+{
+  srand(time(NULL)); //initialize random seed
+  bool stillPlaying = true;  
+  while (stillPlaying == true){
+    int guess = 0;
+    int councter = 0;
+    char ans = ' ';
+    int randomNum = rand() % 100 + 1; //generate random number between 1 and 100
+    cout << "Guess the random number between 1 and 100" << endl; // print out a line
+    while (guess != randomNum){ //while user does not guess number, try again until correct
+      cin >> guess; // allow user input
+      if (guess > randomNum){
+	cout << "The number is too high. Try again!" << endl;
+	counter = counter + 1; // adds to counter for # of guesses
+      }
+      else if (guess < randomNum){
+	cout << "The number is too low. Try again!" << endl;
+	counter = counter + 1;
+      }
+    }
+      counter = counter + 1;
+      cout << "You guessed the correct number! Good Job!" << endl;
+      cout << "It took you " << counter << " tries." << endl; 
+      cout << "Play Again? (y/n)" << endl;
+      cin >> ans;
+      if (ans == 'n' || ans == 'N'){ // if user inputs "n", GuessingGame will stop
+	cout << "Have a nice day!" << endl;
+	stillPlaying = false;
+	break;
+      }
+      // else GuessingGame will play another round
+  }
+}
